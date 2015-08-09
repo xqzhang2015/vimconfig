@@ -1,8 +1,22 @@
 if(has("win32") || has("win95") || has("win64") || has("win16")) "判定当前操作系统类型
     let g:iswindows=1
-else
+elseif has('unix')
     let g:iswindows=0
 endif
+
+"张效群, 2015-08-08 18:43:41
+"Set mapleader, default '\', which is defined for shutcut keys.
+"let mapleader = "\"
+let mapleader = <C>
+"输入<leader>ss这一快捷方式，就会source一次 ~/.vimrc文件
+"Fast reloading of the .vimrc
+map <silent> <leader>ss :source ~/.vimrc<cr>
+"Fast editing of the .vimrc
+map <silent> <leader>ee :e ~/.vimrc<cr>
+"When it is edited, .vimrc will be reloaded.
+autocmd! bufwritepost .vimrc source ~/.vimrc
+
+
 
 "颜色与行显示的设定
 set nu
@@ -148,7 +162,7 @@ call pathogen#infect()
 
 "nerd tree
 let g:nerdtree_tabs_open_on_console_startup=0 
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+let g:pydiction_location = $HOME.'/.vim/bundle/pydiction/complete-dict'
 map <leader>n <plug>NERDTreeTabsToggle <CR> 
 
 "EasyMotion
@@ -161,7 +175,7 @@ nmap	,c  gcc
 nmap	,u	gcu
 
 "vim-PinyinSearch
-let g:PinyinSearch_Dict = '/home/huangyk/.vim/bundle/vim-PinyinSearch/PinyinSearch.dict'
+let g:PinyinSearch_Dict = $HOME.'/.vim/bundle/vim-PinyinSearch/PinyinSearch.dict'
 map		?	:call PinyinSearch()<cr>
 
 
