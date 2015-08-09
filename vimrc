@@ -160,9 +160,10 @@ filetype plugin indent on
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
+"PATH_VIM=${PATH_VIMCONFIG}=`pwd`
 "nerd tree
 let g:nerdtree_tabs_open_on_console_startup=0 
-let g:pydiction_location = $HOME.'/.vim/bundle/pydiction/complete-dict'
+let g:pydiction_location = 'PATH_VIM/bundle/pydiction/complete-dict'
 map <leader>n <plug>NERDTreeTabsToggle <CR> 
 
 "EasyMotion
@@ -175,7 +176,7 @@ nmap	,c  gcc
 nmap	,u	gcu
 
 "vim-PinyinSearch
-let g:PinyinSearch_Dict = $HOME.'/.vim/bundle/vim-PinyinSearch/PinyinSearch.dict'
+let g:PinyinSearch_Dict = 'PATH_VIM/bundle/vim-PinyinSearch/PinyinSearch.dict'
 map		?	:call PinyinSearch()<cr>
 
 
