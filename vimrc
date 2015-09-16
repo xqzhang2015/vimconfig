@@ -7,7 +7,7 @@ endif
 "张效群, 2015-08-08 18:43:41
 "Set mapleader, default '\', which is defined for shutcut keys.
 "let mapleader = "\"
-let mapleader = <C>
+let mapleader = "<C>"
 "输入<leader>ss这一快捷方式，就会source一次 ~/.vimrc文件
 "Fast reloading of the .vimrc
 map <silent> <leader>ss :source ~/.vimrc<cr>
