@@ -9,3 +9,4 @@ fi
 
 cp $HOME/.vimrc $HOME/.vimrc.old
 cp vimrc $HOME/.vimrc
+ln -s PATH_VIMCONFIG ~/.vim
