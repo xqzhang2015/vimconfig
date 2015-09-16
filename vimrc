@@ -156,9 +156,10 @@ exec "!python %"
 endfunc 
 
 "===============================Plugins============================================
-filetype plugin indent on
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
+syntax on
+filetype plugin indent on
 
 "PATH_VIM=${PATH_VIMCONFIG}=`pwd`
 "nerd tree
