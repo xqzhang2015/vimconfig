@@ -1,6 +1,10 @@
 # vimconfig
 This is a vim config files managed by pathogen: .vimrc is auto configured.
 
+[NOTICE: 2015-09-17 09:57:58]
+The vim version from command "➜  ~  vim --version" show be >= 7.4,because of "UltiSnips requires Vim >= 7.4". And you should execute the command "ln -s `pwd` ~/.vim".
+
+
 vimconfig
 =========
 
