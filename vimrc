@@ -162,10 +162,30 @@ syntax on
 filetype plugin indent on
 
 "PATH_VIM=${PATH_VIMCONFIG}=`pwd`
-"nerd tree
-let g:nerdtree_tabs_open_on_console_startup=0 
-let g:pydiction_location = 'PATH_VIM/bundle/pydiction/complete-dict'
-map <leader>n <plug>NERDTreeTabsToggle <CR> 
+"
+" NERD Tree
+let NERDChristmasTree=0
+let NERDTreeWinSize=30
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeWinPos="left"
+" Automatically open a NERDTree if no files where specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Tagbar
+let g:tagbar_width=45
+let g:tagbar_autofocus=1
+nmap <F6> :TagbarToggle<CR>
+map <C-t> :TagbarToggle<CR>
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:TagbarType") && b:TagbarType == "primary") | q | endif
+
+" ctags
+" generate ctags file
+map <F5> :!ctags -R --languages=c++ --langmap=c++:+.inl -h +.inl --c++-kinds=+px --fields=+iaS --extra=+q .<CR><CR> :TagbarToggle<CR>
+set tags=tags;
+set autochdir
 
 "EasyMotion
 "
